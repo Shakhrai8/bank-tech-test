@@ -30,7 +30,7 @@ class cardOperations {
   }
 
   printStatement() {
-    console.log("date || credit || debit || balance");
+    console.log("date       || credit || debit || balance");
     for (let i = this.account.transactions.length - 1; i >= 0; i--) {
       let transaction = this.account.transactions[i];
       console.log(
