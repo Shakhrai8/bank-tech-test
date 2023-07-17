@@ -37,4 +37,28 @@ describe("cardOperations controller", () => {
     expect(account.transactions.length).toEqual(0);
     expect(console.log).toHaveBeenCalledWith("Insufficient balance");
   });
+
+  it("should print the statement", () => {
+    // Mock console.log
+    console.log = jest.fn();
+
+    operations.deposit(1000, "10/01/2023");
+    operations.deposit(2000, "13/01/2023");
+    operations.withdraw(500, "14/01/2023");
+
+    operations.printStatement();
+
+    expect(console.log).toHaveBeenCalledWith(
+      "date || credit || debit || balance"
+    );
+    expect(console.log).toHaveBeenCalledWith(
+      "14/01/2023 || 0.00 || 500.00 || 2500.00"
+    );
+    expect(console.log).toHaveBeenCalledWith(
+      "13/01/2023 || 2000.00 || 0.00 || 3000.00"
+    );
+    expect(console.log).toHaveBeenCalledWith(
+      "10/01/2023 || 1000.00 || 0.00 || 1000.00"
+    );
+  });
 });
