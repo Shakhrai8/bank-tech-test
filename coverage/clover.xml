@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1689603025556" clover="3.2.0">
+  <project timestamp="1689603025556" name="All files">
+    <metrics statements="18" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="4" elements="25" coveredelements="20" complexity="0" loc="18" ncloc="18" packages="2" files="2" classes="2"/>
+    <package name="controllers">
+      <metrics statements="13" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="3"/>
+      <file name="cardOperations.js" path="/Users/yevhenshakhrai/Projects/JavaScriptTraining/bank-tech-test/src/controllers/cardOperations.js">
+        <metrics statements="13" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="19" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="models">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="cardAccount.js" path="/Users/yevhenshakhrai/Projects/JavaScriptTraining/bank-tech-test/src/models/cardAccount.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

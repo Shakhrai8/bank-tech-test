@@ -17,4 +17,24 @@ describe("cardOperations controller", () => {
       { date: "10/01/2023", credit: 1000, debit: 0, balance: 1000 },
     ]);
   });
+
+  it("should make a withdrawal", () => {
+    account.balance = 1500; // Set an initial balance
+
+    operations.withdraw(500, "14/01/2023");
+
+    expect(account.balance).toEqual(1000);
+    expect(account.transactions).toEqual([
+      { date: "14/01/2023", credit: 0, debit: 500, balance: 1000 },
+    ]);
+  });
+
+  it("should not allow withdrawal if balance is insufficient", () => {
+    console.log = jest.fn(); // Mock console.log
+    operations.withdraw(1500, "14/01/2023");
+
+    expect(account.balance).toEqual(0);
+    expect(account.transactions.length).toEqual(0);
+    expect(console.log).toHaveBeenCalledWith("Insufficient balance");
+  });
 });
