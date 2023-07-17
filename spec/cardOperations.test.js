@@ -1,11 +1,14 @@
 const cardOperations = require("../src/controllers/cardOperations");
+jest.mock("../src/models/cardAccount");
 const cardAccount = require("../src/models/cardAccount");
 
 describe("cardOperations controller", () => {
   let account, operations;
 
   beforeEach(() => {
-    account = new cardAccount("1234567890123456", "1234");
+    account = new cardAccount();
+    account.balance = 0;
+    account.transactions = [];
     operations = new cardOperations(account);
   });
 
@@ -48,16 +51,20 @@ describe("cardOperations controller", () => {
 
     operations.printStatement();
 
-    expect(console.log).toHaveBeenCalledWith(
-      "date || credit || debit || balance"
+    expect(console.log).toHaveBeenNthCalledWith(
+      1,
+      "date       || credit || debit || balance"
     );
-    expect(console.log).toHaveBeenCalledWith(
+    expect(console.log).toHaveBeenNthCalledWith(
+      2,
       "14/01/2023 || 0.00 || 500.00 || 2500.00"
     );
-    expect(console.log).toHaveBeenCalledWith(
+    expect(console.log).toHaveBeenNthCalledWith(
+      3,
       "13/01/2023 || 2000.00 || 0.00 || 3000.00"
     );
-    expect(console.log).toHaveBeenCalledWith(
+    expect(console.log).toHaveBeenNthCalledWith(
+      4,
       "10/01/2023 || 1000.00 || 0.00 || 1000.00"
     );
   });
